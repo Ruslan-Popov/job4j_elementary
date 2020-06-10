@@ -2,11 +2,21 @@ package ru.job4j.converter;
 
 public class Converter {
 
+    /**
+     * Метод rubToEur. Конвертирует рубли в евро.
+     * @param x - сумма в рублях.
+     * @return возвращает сумму в евро.
+     */
     public static int rubToEur(int x) {
         int y = x / 70;
         return y;
     }
 
+    /**
+     * Метод rubToUsd. Конвертирует рубли в доллары.
+     * @param x - сумма в рублях.
+     * @return возвращает сумму в долларах.
+     */
     public static int rubToUsd(int x) {
         int y = x / 60;
         return y;
