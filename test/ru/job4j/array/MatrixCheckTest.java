@@ -60,4 +60,43 @@ public class MatrixCheckTest {
         char[] rst = MatrixCheck.extractDiagonal(board);
         assertThat(rst, is(expect));
     }
+
+    @Test
+    public void whenWinHorizontal() {
+        char[][] board = {
+                {' ', ' ', ' ', ' ', 'X'},
+                {' ', 'X', ' ', ' ', 'X'},
+                {'X', 'X', 'X', 'X', 'X'},
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', 'X'}
+        };
+        boolean rst = MatrixCheck.isWin(board);
+        assertThat(rst, is(true));
+    }
+
+    @Test
+    public void whenWinVertical() {
+        char[][] board = {
+                {' ', 'X', ' ', ' ', 'X'},
+                {' ', 'X', ' ', ' ', 'X'},
+                {'X', 'X', ' ', 'X', 'X'},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', 'X', ' ', ' ', 'X'}
+        };
+        boolean result = MatrixCheck.isWin(board);
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void whenNotWin() {
+        char[][] board = {
+                {' ', 'X', ' ', ' ', 'X'},
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', ' ', ' ', 'X', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', 'X', ' ', ' ', 'X'}
+        };
+        boolean result = MatrixCheck.isWin(board);
+        assertThat(result, is(false));
+    }
 }
